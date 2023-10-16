@@ -5,10 +5,11 @@ img {
 .card {
     display: inline-flex;
     margin: 20px 0;
-    width: 400px;
-    justify-content: space-around;
     position: absolute;
     left: 33%;
+}
 
+.data {
+    margin: 10px;
 }
 
