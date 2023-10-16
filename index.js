@@ -82,26 +82,29 @@ async function getRandomCharacter() {
     return character
 }
 
-//Ejercicio 8 
-
+//EJERCICIO 8 
 async function getRandomCharacterInfo() {
     let randomNum = parseInt(Math.random() * 826)
     let response = await fetch(`https://rickandmortyapi.com/api/character/${randomNum}`)
     let character = await response.json();
     let img = character.image;
     let name = character.name;
-    let episodes = character.episode;
+    let episodes = character.episode.length;
 
     let firstEpisodeResp = await fetch(character.episode[0]);
     let firstEpisodeJson = await firstEpisodeResp.json();
     let firstEpisode = firstEpisodeJson.name;
     let dateEpisode = firstEpisodeJson.air_date;
 
-    let card = `<img src="${img}" alt="Imagen de ${name}"></img>
-                <h1>${name}</h1>
-                <p>Appears in ${episodes} episodes</p>
-                <p>First episode: ${firstEpisode}</p>
-                <p>Air date: ${dateEpisode}</p>`
+    let card = `<section class="card">
+                    <img src="${img}" alt="Imagen de ${name}"></img>
+                    <div class="data">
+                        <h1>${name}</h1>
+                        <p>Appears in ${episodes} episodes</p>
+                        <p>First episode: ${firstEpisode}</p>
+                        <p>Air date: ${dateEpisode}</p>
+                    </div>
+                </section>`
                 
     document.body.innerHTML += card
 

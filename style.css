@@ -1,0 +1,14 @@
+img {
+    width: 150px;
+}
+
+.card {
+    display: inline-flex;
+    margin: 20px 0;
+    width: 400px;
+    justify-content: space-around;
+    position: absolute;
+    left: 33%;
+
+}
+
