@@ -89,7 +89,7 @@ async function getRandomCharacterInfo() {
     let character = await response.json();
     let img = character.image;
     let name = character.name;
-    let episodes = character.episode.length;
+    let episodes = character.episode;
 
     let firstEpisodeResp = await fetch(character.episode[0]);
     let firstEpisodeJson = await firstEpisodeResp.json();
